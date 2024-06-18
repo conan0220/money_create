@@ -58,8 +58,7 @@ def generate_dcim(rows: int, columns: int) -> Dcim:
 
 # Xsram1 wl0 blb0 bl0 in_b0 out0 vdd vss
 def generate_dcim_spice(dcim: Dcim, file_path: str) -> str:
-    spice = """
-*** {dcim.rows}x{dcim.columns} DCIM_ARRAY ***
+    spice = f"""*** {dcim.rows}x{dcim.columns} DCIM_ARRAY ***
 .option nomod 
 .lib'0.18umCMOSModel.l'TT
 .temp 27
@@ -90,12 +89,16 @@ MP4 N1 QB VDD VDD pch  W= 0.60U L= 0.10U
             spice += (f"Xsram{row}_{column} wl{cell.wl} blb{cell.blb} bl{cell.bl} in_b{cell.in_b} "
                       f"out{cell.out.row}_{cell.out.column} {cell.vdd_name} {cell.vss_name}\n")
     
-    file_path = os.path.join(file_path, f"{dcim.rows}x{dcim.columns}_dcim.sp")
+    file_name = f"{dcim.rows}x{dcim.columns}_dcim.sp"
+    file_path = os.path.join(file_path, file_name)
     with open(file_path, 'w') as f:
         f.write(spice)
     
     return spice
 
-# Create a 3x3 DCIM
-dcim = generate_dcim(4, 4)
+
+# main
+rows = int(input("Enter the number of rows: "))
+columns = int(input("Enter the number of columns: "))
+dcim = generate_dcim(rows, columns)
 print(generate_dcim_spice(dcim, "D:\\repos\money_create\\res"))

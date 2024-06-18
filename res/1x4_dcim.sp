@@ -1,5 +1,4 @@
-
-*** {dcim.rows}x{dcim.columns} DCIM_ARRAY ***
+*** 1x4 DCIM_ARRAY ***
 .option nomod 
 .lib'0.18umCMOSModel.l'TT
 .temp 27
@@ -26,15 +25,3 @@ Xsram0_0 wl0 blb0 bl0 in_b0 out0_0 vdd vss
 Xsram0_1 wl0 blb1 bl1 in_b0 out0_1 vdd vss
 Xsram0_2 wl0 blb2 bl2 in_b0 out0_2 vdd vss
 Xsram0_3 wl0 blb3 bl3 in_b0 out0_3 vdd vss
-Xsram1_0 wl1 blb0 bl0 in_b1 out1_0 vdd vss
-Xsram1_1 wl1 blb1 bl1 in_b1 out1_1 vdd vss
-Xsram1_2 wl1 blb2 bl2 in_b1 out1_2 vdd vss
-Xsram1_3 wl1 blb3 bl3 in_b1 out1_3 vdd vss
-Xsram2_0 wl2 blb0 bl0 in_b2 out2_0 vdd vss
-Xsram2_1 wl2 blb1 bl1 in_b2 out2_1 vdd vss
-Xsram2_2 wl2 blb2 bl2 in_b2 out2_2 vdd vss
-Xsram2_3 wl2 blb3 bl3 in_b2 out2_3 vdd vss
-Xsram3_0 wl3 blb0 bl0 in_b3 out3_0 vdd vss
-Xsram3_1 wl3 blb1 bl1 in_b3 out3_1 vdd vss
-Xsram3_2 wl3 blb2 bl2 in_b3 out3_2 vdd vss
-Xsram3_3 wl3 blb3 bl3 in_b3 out3_3 vdd vss
