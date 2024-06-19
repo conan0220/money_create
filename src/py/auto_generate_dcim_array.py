@@ -65,7 +65,6 @@ def generate_dcim_spice(dcim: Dcim, file_path: str) -> str:
 
 *power supply*
 VDD VDD 0 1.2
-Vwl0 wl0 0 1.2
 VSS VSS 0 0
 
 .subckt sram_nor WL BLB BL IN_B OUT VDD VSS
@@ -87,7 +86,7 @@ MP4 N1 QB VDD VDD pch  W= 0.60U L= 0.10U
         for column in range(dcim.columns):
             cell = dcim.get_cell(row, column)
             spice += (f"Xsram{row}_{column} wl{cell.wl} blb{cell.blb} bl{cell.bl} in_b{cell.in_b} "
-                      f"out{cell.out.row}_{cell.out.column} {cell.vdd_name} {cell.vss_name}\n")
+                      f"out{cell.out.row}_{cell.out.column} {cell.vdd_name} {cell.vss_name} sram_nor\n")
     
     file_name = f"{dcim.rows}x{dcim.columns}_dcim.sp"
     file_path = os.path.join(file_path, file_name)
@@ -101,4 +100,4 @@ MP4 N1 QB VDD VDD pch  W= 0.60U L= 0.10U
 rows = int(input("Enter the number of rows: "))
 columns = int(input("Enter the number of columns: "))
 dcim = generate_dcim(rows, columns)
-print(generate_dcim_spice(dcim, "D:\\repos\money_create\\res"))
+print(generate_dcim_spice(dcim, "C:\\Users\\chile\\Desktop\\money_create"))
