@@ -1,0 +1,52 @@
+*** 8-to-1 decoder ***
+.option nomod 
+.lib'0.18umCMOSModel.l'TT
+.temp 27
+
+
+*power supply*
+VDD VDD 0 1.8
+VSS VSS 0 0
+
+*inverter*
+.subckt inv in out vdd vss
+MN1 out in vss vss nch W= 0.30U L= 0.10U
+MP1 out in vdd vdd pch W= 0.60U L= 0.10U
+.ends
+
+*AND*
+.subckt and a b c and_out vdd vss
+MN2 out1 a n1 vss nch W= 0.60U L= 0.10U
+MN3 n1 b n2 vss nch W= 0.60U L= 0.10U
+MN4 n2 c vss vss nch W= 0.60U L= 0.10U
+MP2 out1 a vdd vdd pch W= 0.60U L= 0.10U
+MP3 out1 b vdd vdd pch W= 0.60U L= 0.10U
+MP4 out1 c vdd vdd pch W= 0.60U L= 0.10U
+Xinv out1 and_out vdd vss inv
+.ends
+
+*decoder*
+Xinv1 a abar vdd vss inv
+Xinv2 b bbar vdd vss inv
+Xinv3 c cbar vdd vss inv
+Xand1 abar bbar cbar and_out1 vdd vss and
+Xand2 abar bbar c and_out2 vdd vss and
+Xand3 abar b cbar and_out3 vdd vss and
+Xand4 abar b c and_out4 vdd vss and
+Xand5 a bbar cbar and_out5 vdd vss and
+Xand6 a bbar c and_out6 vdd vss and
+Xand7 a b cbar and_out7 vdd vss and
+Xand8 a b c and_out8 vdd vss and
+
+*input source*
+Va a 0 pulse(0 1.8 0 0 0 8 16)
+Vb b 0 pulse(0 1.8 0 0 0 4 8)
+Vc c 0 pulse(0 1.8 0 0 0 2 4)
+
+
+*simulation command*
+.op
+.tran 0.1n 20n
+.measure tran power AVG P(VDD) from=1ns to=20ns
+.probe
+.end
