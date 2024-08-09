@@ -18,7 +18,7 @@ class DcimGenerator:
     _fileFullPath: str
 
     @staticmethod
-    def generate_dcim_by_rows_and_columns(rows, columns) -> Dcim:
+    def generate(rows, columns) -> Dcim:
         DcimGenerator._set_rows_and_columns(rows, columns)
         DcimGenerator._set_xSrams()
         DcimGenerator._set_dcim_by_rows_columns_xSrams()
@@ -57,7 +57,7 @@ class DcimGenerator:
         DcimGenerator._dcim = Dcim(DcimGenerator._rows, DcimGenerator._columns, DcimGenerator._xSrams)
 
     @staticmethod
-    def generate_spice_by_dcim_and_filePath(dcim, file_path):
+    def generate_file(dcim, file_path):
         DcimGenerator._set_dcim(dcim)
         DcimGenerator._set_filePath(file_path)
         DcimGenerator._write_basic_simulation_setting_to_spice()
