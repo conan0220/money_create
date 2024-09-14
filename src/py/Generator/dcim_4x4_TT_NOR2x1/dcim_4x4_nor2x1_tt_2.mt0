@@ -1,0 +1,8 @@
+$DATA1 SOURCE='HSPICE' VERSION='C-2009.09-SP1 32-BIT'
+.TITLE '*** 4x4 nor2x1 dcim_array ***'
+ tread1_delay     tread1_slew      tread1_wl_delay  tread1_se_delay   
+ tread0_delay     tread0_slew      tread0_wl_delay  tread0_se_delay   
+ temper           alter#            
+  6.917e-10        5.167e-11        4.746e-10        4.773e-10        
+  7.123e-10        5.554e-11        4.738e-10        4.764e-10        
+   27.0000           1.0000         

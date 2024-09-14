@@ -1,0 +1,56 @@
+***** HSPICE -- C-2009.09-SP1 32-BIT (Nov 23 2009) winnt ******
+ Input File: c:\users\g533zw\desktop\lab616_meeting\simulation_dcim\4x4\dcim_4x4
+ lic:
+ lic: FLEXlm: v8.5b
+ lic: USER:   G533ZW               HOSTNAME: ASUS-NB
+ lic: HOSTID: "009337e97ba3 a036bc64b6c1 009337e97b9f 009337e97ba0 029337e97b9f"
+ lic: Using FLEXlm license file:
+ lic: 27000@DESKTOP-6565KSO
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 31-dec-2050/2050.12
+ lic: NODE LOCKED license on hostid "009337e97ba3 a036bc64b6c1 009337e97b9f 0093
+ lic:
+ init: begin read circuit files,  cpu clock=  3.55E-01
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\behave\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\AD\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\XILINX\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\TLINE\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\TI\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\SIGNET\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\PCI\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\LIN_TECH\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\FET\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\DIO\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\COMLINE\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\BURR_BRN\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\BJT\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\behave\
+       option search   = C:\synopsys\Hspice_C-2009.09-SP1\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option nomod
+       option captab   =     1.00
+ init: end read circuit files,  cpu clock=  3.96E-01 memory=    438 kb
+ init: begin check errors,  cpu clock=  3.96E-01
+ **warning**  no dc path to ground from node        0:                inb0
+ init: end check errors,  cpu clock=  4.14E-01 memory=   4189 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  4.14E-01
+       establish matrix -- done,  cpu clock=  4.18E-01 memory=   4226 kb
+       re-order matrix -- done,  cpu clock=  5.26E-01 memory=   4226 kb
+ init: end setup matrix,  cpu clock=  5.29E-01 memory=   4883 kb
+ dcop: begin dcop,  cpu clock=  5.33E-01
+ dcop: end dcop,  cpu clock=  5.64E-01 memory=   4883 kb  tot_iter=      33
+ output: c:\users\g533zw\desktop\lab616_meeting\simulation_dcim\4x4\dcim_4x4_tt_
+ sweep: tran tran0    begin, stop_t=  7.00E-08 #sweeps=7001 cpu clock=  5.71E-01
+ tran: time= 7.2466E-09 tot_iter=     276 conv_iter=      97 cpu clock= 7.26E-01
+ tran: time= 1.5000E-08 tot_iter=     603 conv_iter=     208 cpu clock= 9.03E-01
+ tran: time= 2.1036E-08 tot_iter=    1028 conv_iter=     354 cpu clock= 1.14E+00
+ tran: time= 2.8000E-08 tot_iter=    1135 conv_iter=     392 cpu clock= 1.20E+00
+ tran: time= 3.5000E-08 tot_iter=    1487 conv_iter=     516 cpu clock= 1.38E+00
+ tran: time= 4.2053E-08 tot_iter=    1752 conv_iter=     610 cpu clock= 1.53E+00
+ tran: time= 4.9186E-08 tot_iter=    1896 conv_iter=     667 cpu clock= 1.60E+00
+ tran: time= 5.6130E-08 tot_iter=    2211 conv_iter=     778 cpu clock= 1.77E+00
+ tran: time= 6.3062E-08 tot_iter=    2491 conv_iter=     876 cpu clock= 1.93E+00
+ sweep: tran tran0    end,  cpu clock=  1.97E+00 memory=   4897 kb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)
