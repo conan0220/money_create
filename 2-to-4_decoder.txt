@@ -1,0 +1,23 @@
+*2-input AND gate
+.subckt and2 a1 a2 and_out vdd vss
+MN1 n1 a1 n2 vss nch W=1U L=0.18U
+MN2 n2 a2 vss vss nch W=1U L=0.18U
+MP1 n1 a1 vdd vdd pch W=1U L=0.18U
+MP2 n1 a2 vdd vdd pch W=1U L=0.18U
+Xinv n1 and_out vdd vss inv
+.ends
+
+*2-to-4 Decoder
+.subckt decoder2to4 en a1 a2 out1 out2 out3 out4 vdd vss
+Xinv1 a1 abar1 vdd vss inv
+Xinv2 a2 abar2 vdd vss inv
+Xand1 abar1 abar2 and_out1 vdd vss and2
+Xand2 a1 abar2 and_out2 vdd vss and2
+Xand3 abar1 a2 and_out3 vdd vss and2
+Xand4 a1 a2 and_out4 vdd vss and2
+Xand5 en and_out1 out1 vdd vss and2
+Xand6 en and_out2 out2 vdd vss and2
+Xand7 en and_out3 out3 vdd vss and2
+Xand8 en and_out4 out4 vdd vss and2
+
+.ends
